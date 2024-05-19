@@ -1,0 +1,52 @@
+restTileOneGUID = '3976f3'
+restTileOne = {}
+prepareTileOneGUID = '93419b'
+prepareTileTwoGUID = 'cdbdcd'
+prepareTileOne = {}
+prepareTileTwo = {}
+climbTileOneGUID = '560003'
+climbTileTwoGUID = '6f4b49'
+climbTileOne = {}
+climbTileTwo = {}
+
+function onLoad()
+	self.interactable = true;
+	
+	restTileOne = self.getObjectFromGuid( restTileOneGUID )
+	prepareTileOne = getObjectFromGUID( prepareTileOneGUID )
+	prepareTileTwo = getObjectFromGUID( prepareTileTwoGUID )
+	climbTileOne = getObjectFromGUID( climbTileOneGUID )
+	climbTileTwo = getObjectFromGUID( climbTileTwoGUID )
+	
+    self.createButton({
+		click_function = "upgradeRest",
+		function_owner = self,
+		label = "Upgrade Rest",
+		position = {10, 41.5, 40.5},
+		rotation = {0, 0, 0},
+		width = 1500,
+		height = 150,
+		font_size = 200,
+        color = {1, 0, 0},
+        font_color = {1, 1, 1}
+	})
+end
+
+function upgradeRest()
+	local currentRestPosition = restTileOne.getPosition()
+	local newRestPosition = {
+		x = currentRestPosition.x,
+		y = currentRestPosition.y,
+		z = currentRestPosition.z + 0.4
+	}
+
+	restTileOne.setPositionSmooth(newRestPosition, false, false)
+end
+
+function upgradePrepare()
+
+end
+
+function upgradeClimb()
+
+end
