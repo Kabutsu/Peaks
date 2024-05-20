@@ -13,7 +13,7 @@ boardGUID = '109a85'
 
 function onLoad()
     dealCardParams = {
-        click_function = "dealCards",
+        click_function = "DealCards",
         function_owner = self,
         label          = "Discard leftmost mountain\n(if any) and replenish",
         position       = {-10.5, 17.8, 1.5},
@@ -147,7 +147,7 @@ local function dealCard(moveTo)
     end
 end
 
-function dealCards()
+function DealCards()
     leftMountainCard = leftMountainArea.getObjects()
     middleleftMountainCard = middleleftMountainArea.getObjects()
     middlerightMountainCard = middlerightMountainArea.getObjects()
